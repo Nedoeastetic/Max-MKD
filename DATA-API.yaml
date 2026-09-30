@@ -1,0 +1,45 @@
+version: 1
+solution: "Аварийный диспетчер МКД"
+team: "<ВАШ_ID_КОМАНДЫ>"
+base_url: "https://v3258578.hosted-by-vdsina.ru"
+checks:
+  - name: ml_health
+    method: GET
+    path: /api/health
+    role: guest
+    expected_status: [200]
+    expected_content_type: json
+    expected_fields: [status, models.cv, models.text]
+  - name: ml_text_water_supply
+    method: POST
+    path: /api/text/analyze
+    headers: {Content-Type: application/json}
+    body: {"text": "В подвале течёт труба, уже вся вода на полу"}
+    role: guest
+    expected_status: [200]
+    expected_content_type: json
+    expected_fields: [category, subcategory, confidence, top3, modelVersion]
+    expected_values: {category: "WATER_SUPPLY"}
+  - name: ml_text_not_incident
+    method: POST
+    path: /api/text/analyze
+    headers: {Content-Type: application/json}
+    body: {"text": "Привет, как дела?"}
+    role: guest
+    expected_status: [200]
+    expected_content_type: json
+    expected_values: {category: null}
+  - name: bot_health
+    method: GET
+    path: /api/bot/health
+    role: guest
+    expected_status: [200]
+    expected_content_type: json
+    expected_fields: [status, database, version]
+  - name: bot_incidents_list
+    method: GET
+    path: /api/bot/incidents
+    role: guest
+    expected_status: [200]
+    expected_content_type: json
+# Vision-эндпоинт проверяется по README п.11 (multipart, test_data/pipe.jpg)
