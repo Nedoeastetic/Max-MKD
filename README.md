@@ -1015,5 +1015,4 @@ MIT License.
 - Full-stack разработка;
 - AI/ML;
 - UX/UI;
-- архитектура и DevOps.#   M a x - M K D  
- 
+- архитектура и DevOps.
