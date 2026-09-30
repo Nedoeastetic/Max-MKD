@@ -1,0 +1,21 @@
+# Bot .dockerignore
+node_modules/
+.env
+*.log
+.git/
+.gitignore
+README.md
+*.md
+docs/
+coverage/
+*.test.ts
+*.spec.ts
+tmp/
+uploads/
+*.sqlite
+*.db
+.vscode/
+.idea/
+.DS_Store
+dist/
+build/

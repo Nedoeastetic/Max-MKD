@@ -1,0 +1,97 @@
+# ===========================================
+# .gitignore для проекта "Аварийный диспетчер МКД"
+# ===========================================
+
+# Зависимости
+node_modules/
+*/node_modules/
+
+# Переменные окружения (секреты)
+.env
+.env.local
+.env.*.local
+bot/.env
+docker-deploy/.env
+
+# Next.js
+.next/
+out/
+
+# Сборка и билд
+dist/
+build/
+*/dist/
+*/build/
+
+# Логи
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+
+# Базы данных
+*.sqlite
+*.db
+*.db-journal
+database.sqlite
+bot/database.sqlite
+
+# Временные файлы и кэш
+.cache/
+.parcel-cache/
+.tsbuildinfo
+.eslintcache
+
+# Загрузки пользователей
+uploads/
+tmp/
+
+# Файлы операционной системы
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE и редакторы
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Архивы (не коммитим)
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Docker (не коммитим образы)
+docker-compose.override.yml
+
+# Тесты и покрытие
+coverage/
+.nyc_output/
+*.lcov
+
+# Прочее
+*.pid
+*.seed
+*.pid.lock
+lib-cov/
+.grunt/
+.lock-wscript
+node_modules/
+jspm_packages/
+bower_components/
+.pnp
+.pnp.js

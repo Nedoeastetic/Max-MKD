@@ -1,0 +1,93 @@
+# ===========================================
+# .dockerignore для проекта "Аварийный диспетчер МКД"
+# ===========================================
+# Уменьшает контекст сборки Docker и ускоряет сборку
+
+# Git
+.git/
+.gitignore
+
+# Node.js
+node_modules/
+*/node_modules/
+
+# Логи
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Переменные окружения (НЕ передаём секреты в Docker)
+.env
+.env.local
+.env.*.local
+bot/.env
+docker-deploy/.env
+
+# IDE и редакторы
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Файлы ОС
+.DS_Store
+.DS_Store?
+Thumbs.db
+
+# Тесты и покрытие
+coverage/
+.nyc_output/
+*.lcov
+__tests__/
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts
+
+# Документация (не нужна в образе)
+README.md
+*.md
+docs/
+LICENSE
+
+# Временные файлы
+tmp/
+temp/
+.cache/
+.parcel-cache/
+.tsbuildinfo
+
+# Базы данных (создаются при запуске)
+*.sqlite
+*.db
+*.db-journal
+
+# Загрузки пользователей
+uploads/
+tmp/
+
+# Архивы
+*.zip
+*.tar.gz
+*.rar
+
+# Docker файлы (не включаем рекурсивно)
+docker-compose*.yml
+Dockerfile*
+.dockerignore
+
+# Сборка фронтенда (если не нужна в образе бота)
+dist/
+build/
+.next/
+out/
+
+# Прочее
+*.pid
+*.seed
+.grunt/
+jspm_packages/
+bower_components/

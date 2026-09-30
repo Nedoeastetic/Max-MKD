@@ -1,0 +1,17 @@
+# Miniapp .dockerignore
+node_modules/
+.env
+*.log
+.git/
+.gitignore
+README.md
+*.md
+docs/
+.vscode/
+.idea/
+.DS_Store
+dist/
+build/
+src/
+package.json
+package-lock.json
